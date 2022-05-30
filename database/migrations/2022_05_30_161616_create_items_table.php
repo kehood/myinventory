@@ -18,7 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('category_id')->nullable();
             $table->foreignId('vendor_id')->nullable();
-            $table->string('quick_lookup')->nullable();
+            $table->string('quick_lookup');
+            $table->string('quick_name')->nullable();
             $table->string('description', 255);
             $table->integer('quantity_on_hand')->nullable();
             $table->integer('quantity_on_order')->nullable();
