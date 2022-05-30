@@ -38,7 +38,7 @@
                             in </a>
                         <a href="{{ route('register') }}"
                             class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
-                            Start free trial </a>
+                            Sign up for free </a>
                     </div>
                 </nav>
             </div>
@@ -97,7 +97,7 @@
                         <div
                             class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                             <div class="lg:py-24">
-                                <a href="#"
+                                {{-- <a href="#"
                                     class="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
                                     <span
                                         class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full">We're
@@ -110,14 +110,14 @@
                                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                             clip-rule="evenodd" />
                                     </svg>
-                                </a>
+                                </a> --}}
                                 <h1
                                     class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                                     <span class="block">A simpler way to</span>
                                     <span class="block text-indigo-400">manage inventory</span>
                                 </h1>
                                 <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg lg:text-md xl:text-lg">
-                                    We set out to build the simplest inventory management solution possible. One that works on any internet connected device.  One that just fits the needs of small businesses and individuals.  Welcome to <span class="text-indigo-400">MyInventory</span>.
+                                    We set out to build the simplest inventory management solution possible. One that works on any internet connected device and one that fits the needs of small businesses and individuals.  Don't let our simplicity fool you, our system handles it all. Welcome to <span class="text-indigo-400">MyInventory</span>.
                                 </p>
                                 <div class="mt-10 sm:mt-12">
                                     <form method="POST" action="{{ route('welcome.page.signup') }}" class="sm:max-w-xl sm:mx-auto lg:mx-0">
@@ -133,7 +133,7 @@
                                                     class="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">Sign up for free</button>
                                             </div>
                                         </div>
-                                        <p class="mt-3 text-sm text-gray-300 sm:mt-4">Sign up for free.  No credit card required. <a href="#">Additional services extra.</a>.</p>
+                                        <p class="mt-3 text-sm text-gray-300 sm:mt-4">Sign up for free.  No credit card required. <a href="#">Additional services extra</a>.</p>
                                     </form>
                                 </div>
                             </div>
@@ -141,9 +141,10 @@
                         <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
                             <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
                                 <!-- Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ -->
-                                <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                                {{-- <img class="w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
                                     src="https://tailwindui.com/img/component-images/cloud-illustration-indigo-400.svg"
-                                    alt="">
+                                    alt=""> --}}
+                                <x-spash />
                             </div>
                         </div>
                     </div>
