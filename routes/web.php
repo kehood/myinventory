@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/signup', [ GuestController::class, 'signUp' ])->name('welcome.page.signup');
+
 
 Route::middleware([
     'auth:sanctum',

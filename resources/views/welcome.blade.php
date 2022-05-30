@@ -7,9 +7,8 @@
                     <div class="flex items-center flex-1">
                         <div class="flex items-center justify-between w-full md:w-auto">
                             <a href="#">
-                                <span class="sr-only">Workflow</span>
-                                <img class="h-8 w-auto sm:h-10"
-                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="">
+                                <span class="sr-only">MyInventory</span>
+                                <x-jet-application-mark />
                             </a>
                             <div class="-mr-2 flex items-center md:hidden">
                                 <button type="button" x-on:click="mobileMenu = true"
@@ -44,23 +43,13 @@
                 </nav>
             </div>
 
-            <!--
-                Mobile menu, show/hide based on menu open state.
-
-                Entering: "duration-150 ease-out"
-                    From: "opacity-0 scale-95"
-                    To: "opacity-100 scale-100"
-                Leaving: "duration-100 ease-in"
-                    From: "opacity-100 scale-100"
-                    To: "opacity-0 scale-95"
-                -->
+            {{-- Mobile Menu --}}
             <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden" x-show="mobileMenu"
                 x-transition>
                 <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div class="px-5 pt-4 flex items-center justify-between">
                         <div>
-                            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                                alt="">
+                            <x-jet-application-mark />
                         </div>
                         <div class="-mr-2">
                             <button type="button" x-on:click="mobileMenu = false"
@@ -90,8 +79,7 @@
                         </div>
                         <div class="mt-6 px-5">
                             <a href="{{ route('register') }}"
-                                class="block text-center w-full py-3 px-4 rounded-md shadow bg-indigo-600 text-white font-medium hover:bg-indigo-700">Start
-                                free trial</a>
+                                class="block text-center w-full py-3 px-4 rounded-md shadow bg-indigo-600 text-white font-medium hover:bg-indigo-700">Sign up for free</a>
                         </div>
                         <div class="mt-6 px-5">
                             <p class="text-center text-base font-medium text-gray-500">Existing customer? <a
@@ -125,29 +113,27 @@
                                 </a>
                                 <h1
                                     class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                                    <span class="block">A better way to</span>
-                                    <span class="block text-indigo-400">ship web apps</span>
+                                    <span class="block">A simpler way to</span>
+                                    <span class="block text-indigo-400">manage inventory</span>
                                 </h1>
-                                <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Anim
-                                    aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem cupidatat commodo.
-                                    Elit sunt amet fugiat veniam occaecat fugiat.</p>
+                                <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg lg:text-md xl:text-lg">
+                                    We set out to build the simplest inventory management solution possible. One that works on any internet connected device.  One that just fits the needs of small businesses and individuals.  Welcome to <span class="text-indigo-400">MyInventory</span>.
+                                </p>
                                 <div class="mt-10 sm:mt-12">
-                                    <form action="#" class="sm:max-w-xl sm:mx-auto lg:mx-0">
+                                    <form method="POST" action="{{ route('welcome.page.signup') }}" class="sm:max-w-xl sm:mx-auto lg:mx-0">
+                                        @csrf
                                         <div class="sm:flex">
                                             <div class="min-w-0 flex-1">
                                                 <label for="email" class="sr-only">Email address</label>
-                                                <input id="email" type="email" placeholder="Enter your email"
+                                                <input id="email" name="email" type="email" placeholder="Enter your email"
                                                     class="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">
                                             </div>
                                             <div class="mt-3 sm:mt-0 sm:ml-3">
                                                 <button type="submit"
-                                                    class="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">Start
-                                                    free trial</button>
+                                                    class="block w-full py-3 px-4 rounded-md shadow bg-indigo-500 text-white font-medium hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 focus:ring-offset-gray-900">Sign up for free</button>
                                             </div>
                                         </div>
-                                        <p class="mt-3 text-sm text-gray-300 sm:mt-4">Start your free 14-day trial, no
-                                            credit card necessary. By providing your email, you agree to our <a href="#"
-                                                class="font-medium text-white">terms of service</a>.</p>
+                                        <p class="mt-3 text-sm text-gray-300 sm:mt-4">Sign up for free.  No credit card required. <a href="#">Additional services extra.</a>.</p>
                                     </form>
                                 </div>
                             </div>
@@ -237,7 +223,7 @@
                         </svg>
                     </a>
                 </div>
-                <p class="mt-8 text-center text-base text-gray-400">&copy; 2020 Workflow, Inc. All rights reserved.</p>
+                <p class="mt-8 text-center text-base text-gray-400">&copy; {{ \Carbon\Carbon::now()->format('Y') }} MyInventory. All rights reserved.</p>
             </div>
         </footer>
 
