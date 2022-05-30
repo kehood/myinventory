@@ -16,7 +16,7 @@
 
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                @if ($user)
+                @if (isset($user))
                     <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" value="{{ $user }}" required />
                 @else
                     <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
