@@ -1,5 +1,5 @@
 <div class="py-10">
-    @livewire('user.modals.item-modal')
+    @livewire('user.modals.item-modal', ['user' => Auth::user() ])
     <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
         <div class="-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap">
             <div class="ml-4 mt-4">
@@ -25,29 +25,29 @@
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                         <div class="table w-full divide-y divide-gray-200">
                             <div class="bg-gray-50 table-row-group">
-                                <div class="table-row">
+                                <div class="sm:table-row hidden">
                                     <div
                                         class="table-cell px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
-                                        Item Code
+                                        Quick Lookup
                                     </div>
                                     <div
                                         class="table-cell px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
                                         Item Name
                                     </div>
                                     <div
-                                        class="table-cell px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                        class="table-cell px-6 py-3 text-right text-sm font-medium text-gray-500 uppercase">
                                         Item Cost
                                     </div>
                                     <div
-                                        class="table-cell px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                        class="table-cell px-6 py-3 text-right text-sm font-medium text-gray-500 uppercase">
                                         Item List
                                     </div>
                                     <div
-                                        class="table-cell px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                        class="table-cell px-6 py-3 text-right text-sm font-medium text-gray-500 uppercase">
                                         Quantity On Hand
                                     </div>
                                     <div
-                                        class="table-cell px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase">
+                                        class="table-cell px-6 py-3 text-right text-sm font-medium text-gray-500 uppercase">
                                         Quantity On Order
                                     </div>
                                 </div>
@@ -61,18 +61,18 @@
                                             {{ $item->quick_lookup }}
                                         </div>
                                         <div class="table-cell px-6 py-4 text-sm text-gray-500">
-                                            {{ $item->quick_name }}
+                                            {{ $item->item_name }}
                                         </div>
-                                        <div class="table-cell px-6 py-4 text-sm text-gray-500">
+                                        <div class="table-cell px-6 py-4 text-sm text-gray-500 text-right">
                                             {{ $item->cost }}
                                         </div>
-                                        <div class="table-cell px-6 py-4 text-sm text-gray-500">
+                                        <div class="table-cell px-6 py-4 text-sm text-gray-500 text-right">
                                             {{ $item->list_price }}
                                         </div>
-                                        <div class="table-cell px-6 py-4 text-sm text-gray-500">
+                                        <div class="table-cell px-6 py-4 text-sm text-gray-500 text-right">
                                             {{ $item->quantity_on_hand }}
                                         </div>
-                                        <div class="table-cell px-6 py-4 text-sm text-gray-500">
+                                        <div class="table-cell px-6 py-4 text-sm text-gray-500 text-right">
                                             {{ $item->quantity_on_order ?? 0 }}
                                         </div>
                                     </a>

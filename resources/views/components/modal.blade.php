@@ -16,7 +16,10 @@
                 x-show="modal" x-transition>
                 {{-- CONTENT STARTS HERE --}}
                 {{ $slot }}
-                <div class="flex flex-row-reverse mt-4">
+                <div class="flex flex-row-reverse mt-4 px-8">
+                    <x-jet-button wire:click="save" class="ml-8">
+                        Save
+                    </x-jet-button>
                     <x-jet-button wire:click="close">
                         Close
                     </x-jet-button>
